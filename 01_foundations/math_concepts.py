@@ -124,4 +124,52 @@ import math
 # else:
 #     print("invalid")
 
+# 11. Factorial
+# iterative approach
+# n = 10
+# factorial = 1
+# for i in range(1, n + 1):
+#     factorial *= i
+# print(factorial) 
 
+# # recursive approach
+# def factorial(n):
+#     if n == 0:
+#         return 1
+#     return n * factorial(n - 1)
+
+# print(factorial(10))
+
+# 12. Pair Cube Count
+# Given n, count all 'a' and 'b' that satisfy the condition a^3 + b^3 = n. 
+# Where (a, b) and (b, a) are considered two different pairs
+# n = 9 # output: 2
+# count = 0
+
+# for a in range(n):
+#     for b in range(n):
+#         if n == a**3 + b**3:
+#             count += 1
+
+# print(count)
+
+# another approach
+# def countPairs(n):
+#     count = 0
+#     # Check for each number 1 to cbrt(n)
+#     for i in range(1, int(math.pow(n, 1/3)) + 1):
+#         # Store cube of a number
+#         cb = i * i * i
+#         # Subtract the cube from given n
+#         diff = n - cb
+#         # Check if the difference is also a perfect cube
+#         cbrt_diff = round(diff ** (1/3))
+#         # If yes, then increment count
+#         if cbrt_diff * cbrt_diff * cbrt_diff == diff:
+#             count += 1
+
+#     return count
+
+# if __name__ == "__main__":
+#   n = 2
+#   print(countPairs(n))
