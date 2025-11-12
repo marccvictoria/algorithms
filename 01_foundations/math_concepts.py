@@ -173,3 +173,18 @@ import math
 # if __name__ == "__main__":
 #   n = 2
 #   print(countPairs(n))
+
+# lcm
+def lcm(a, b):
+    # get the lower number
+    if a > b:
+        a, b = b, a # a is smaller, b is larger
+
+    # loop
+    i = b
+    while True:
+        if i % a == 0:
+           return i
+        i += 1
+
+print(lcm(10, 5)) # 10 
